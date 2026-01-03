@@ -7,9 +7,8 @@ Imagine the Internet is a giant, busy city. Every computer (or "Server") is a ho
 As a student of **Cybersecurity**, my job is to change that. I am learning how to take that "open house" and turn it into a **Fortress**. This project is part of my self-development journey to understand how to protect data and systems from the ground up.
 
 ---
-<p align="center">
-  <img src="hardening-audit.gif" alt="Hardening Server Audit Proof" width="600">
-</p>
+<p align="center">![Image](https://github.com/user-attachments/assets/14a81cb7-b692-4483-b21b-192ea43bed04)>
+</p> 
 
 
 
