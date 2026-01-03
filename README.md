@@ -7,6 +7,20 @@ Imagine the Internet is a giant, busy city. Every computer (or "Server") is a ho
 As a student of **Cybersecurity**, my job is to change that. I am learning how to take that "open house" and turn it into a **Fortress**. This project is part of my self-development journey to understand how to protect data and systems from the ground up.
 
 ---
+## 🛡️ Security Audit & Verification (Proof of Concept)
+
+To verify the effectiveness of the server hardening, I performed a professional security audit using **Lynis**, an industry-standard security auditing tool for Linux-based systems. This scan evaluates the system's configuration, software vulnerabilities, and compliance with security best practices.
+
+### Why this matters:
+* **Attack Surface Reduction:** The audit identifies unnecessary services and open ports that could be exploited by an attacker.
+* **Continuous Monitoring:** In a real-world cybersecurity role, performing regular audits is essential to maintain the "Security Guard" posture.
+* **Measurable Progress:** The "Hardening Index" gives a concrete score to show exactly how secure the server is before and after configuration.
+
+### Live Audit Execution:
+The GIF below demonstrates the live execution of the `sudo lynis audit system` command, showcasing the automated security checks and the final Hardening Index score.
+
+![Hardening Server Audit Proof](./hardening-audit.gif)
+
 ![Image](https://github.com/user-attachments/assets/14a81cb7-b692-4483-b21b-192ea43bed04)
 
 
