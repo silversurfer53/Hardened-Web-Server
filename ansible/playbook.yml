@@ -1,0 +1,47 @@
+---
+- name: Hardened Web Server Configuration
+  hosts: all
+  become: yes
+  tasks:
+    - name: 1. Update all system software
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: 2. Disable SSH Password Login (Enforce SSH Keys)
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+
+    - name: 3. Disable Root Login over SSH
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin no'
+
+    - name: 4. Install Firewall (UFW)
+      apt:
+        name: ufw
+        state: present
+
+    - name: 5. Allow only essential ports (SSH, HTTP, HTTPS)
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop:
+        - '22'
+        - '80'
+        - '443'
+
+    - name: 6. Block everything else and enable Firewall
+      ufw:
+        state: enabled
+        policy: deny
+        direction: incoming
+
+    - name: 7. Restart SSH to apply security changes
+      service:
+        name: ssh
+        state: restarted
